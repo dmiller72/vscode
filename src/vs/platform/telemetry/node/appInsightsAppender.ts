@@ -144,6 +144,8 @@ export class AppInsightsAppender implements ITelemetryAppender {
 			console.log(`Measurements key ${key} value ${measurements[key]}`);
 		});
 
+		this._aiClient.sendPendingData(() => { });
+
 	}
 
 	dispose(): TPromise<any> {
